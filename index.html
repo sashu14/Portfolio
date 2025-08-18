@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sashvitha Reddy | Portfolio</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#f8f9fa;color:#333;line-height:1.6;}
+    a{text-decoration:none;color:inherit;}
+    h1,h2,h3{font-weight:600;}
+
+    header{
+      background:linear-gradient(135deg,#4f46e5,#9333ea);
+      color:#fff;
+      text-align:center;
+      padding:5rem 2rem;
+      position:relative;
+    }
+    header h1{font-size:3rem;letter-spacing:1px;}
+    header p{margin:0.5rem 0;font-size:1.1rem;}
+    .btn{
+      display:inline-block;
+      margin-top:1.5rem;
+      padding:0.8rem 1.5rem;
+      border-radius:30px;
+      background:#fff;
+      color:#4f46e5;
+      font-weight:600;
+      transition:0.3s;
+    }
+    .btn:hover{background:#ddd;}
+
+    nav{margin-top:1.5rem;}
+    nav a{margin:0 12px;font-weight:500;color:#fff;transition:0.3s;}
+    nav a:hover{color:#ffd700;}
+
+    section{padding:4rem 2rem;max-width:1100px;margin:auto;}
+    section h2{
+      text-align:center;
+      font-size:2rem;
+      color:#4f46e5;
+      margin-bottom:2rem;
+      position:relative;
+    }
+    section h2::after{
+      content:"";
+      display:block;
+      width:60px;
+      height:4px;
+      background:#9333ea;
+      margin:8px auto 0;
+      border-radius:5px;
+    }
+
+    .skills{display:flex;flex-wrap:wrap;gap:15px;justify-content:center;}
+    .skill{
+      background:linear-gradient(135deg,#4f46e5,#9333ea);
+      color:#fff;
+      padding:0.7rem 1.2rem;
+      border-radius:25px;
+      font-size:0.9rem;
+      transition:transform 0.3s;
+    }
+    .skill:hover{transform:scale(1.1);}
+
+    .card{
+      background:#fff;
+      padding:1.5rem;
+      margin:1rem 0;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      transition:transform 0.3s,box-shadow 0.3s;
+    }
+    .card:hover{transform:translateY(-5px);box-shadow:0 6px 15px rgba(0,0,0,0.15);}
+    .card h3{color:#333;margin-bottom:0.5rem;}
+
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+    .projects .card a{color:#4f46e5;font-weight:600;}
+
+    .timeline{border-left:3px solid #4f46e5;padding-left:20px;}
+    .timeline li{margin:20px 0;list-style:none;position:relative;}
+    .timeline li::before{
+      content:"";
+      position:absolute;
+      left:-11px;top:5px;
+      width:15px;height:15px;
+      background:#9333ea;
+      border-radius:50%;
+    }
+
+    footer{
+      background:#4f46e5;
+      color:#fff;
+      text-align:center;
+      padding:2rem 1rem;
+      margin-top:2rem;
+    }
+    footer a{color:#ffd700;margin:0 8px;font-weight:500;}
+
+    .reveal{opacity:0;transform:translateY(30px);transition:all 0.8s ease;}
+    .reveal.active{opacity:1;transform:translateY(0);}
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="reveal">Sashvitha Reddy</h1>
+    <p class="reveal">AI Enthusiast | Data Analyst | Developer</p>
+    <p class="reveal">📍 Suchitra, Hyderabad | 📞 +91 93818 79223 | ✉️ <a href="mailto:sashvitha15220@gmail.com" style="color:white;">sashvitha15220@gmail.com</a></p>
+    <a href="#projects" class="btn reveal">View My Work</a>
+    <nav>
+      <a href="#objective">Objective</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+    </nav>
+  </header>
+
+  <section id="objective" class="reveal">
+    <h2>Objective</h2>
+    <p style="text-align:center;max-width:800px;margin:auto;">
+      B.Tech student at Woxsen University, passionate about AI, data analysis, and software development. 
+      Eager to apply technical and analytical skills in dynamic environments.
+    </p>
+  </section>
+
+  <section id="skills" class="reveal">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span class="skill">Python</span>
+      <span class="skill">Java</span>
+      <span class="skill">SQL</span>
+      <span class="skill">Botpress</span>
+      <span class="skill">HTML</span>
+      <span class="skill">CSS</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">Market Studies</span>
+      <span class="skill">Linux</span>
+      <span class="skill">Database Management</span>
+      <span class="skill">Communication</span>
+    </div>
+  </section>
+
+  <section id="projects" class="reveal">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>AI Chatbot (AURA) for Stress Management</h3>
+        <p>Developed an AI-driven chatbot using Python and Botpress, focused on NLP techniques. 
+           Managed full-stack development, data handling, and system integration for real-time support.</p>
+        <a href="https://sashu14.github.io/AURA/" target="_blank">🔗 View AURA</a>
+      </div>
+      <div class="card">
+        <h3>Aviation Competitiveness Research</h3>
+        <p>Collaborated with corporate clients (Maruti, Alliance) on consulting studies focusing on leadership strategy, 
+           data-driven decision making, and stakeholder requirement analysis.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="reveal">
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>Project Intern – BHEL</h3>
+      <p>Contributed to the RAG (Retrieve-Answer-Generate) project. Integrated NLP models, 
+         evaluated backend data retrieval/response mechanisms, and collaborated with technical teams.</p>
+    </div>
+    <div class="card">
+      <h3>Executive Education – Woxsen University</h3>
+      <p>Worked with corporate leaders on consulting projects in strategy and development.</p>
+    </div>
+  </section>
+
+  <section id="education" class="reveal">
+    <h2>Education</h2>
+    <ul class="timeline">
+      <li><b>B.Tech (2023–27):</b> Woxsen University (Pursuing 3rd year)</li>
+      <li><b>Intermediate:</b> Excellencia Junior College – 97%</li>
+      <li><b>High School:</b> Bhavan Sri Ramakrishna Vidyalaya – 9.3 CGPA</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Sashvitha Reddy</p>
+    <p>
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a> | 
+      <a href="https://github.com" target="_blank">GitHub</a>
+    </p>
+  </footer>
+
+  <script>
+    function revealOnScroll(){
+      const reveals=document.querySelectorAll('.reveal');
+      for(let r of reveals){
+        const windowHeight=window.innerHeight;
+        const revealTop=r.getBoundingClientRect().top;
+        if(revealTop < windowHeight-100){r.classList.add('active');}
+      }
+    }
+    window.addEventListener('scroll',revealOnScroll);
+    window.addEventListener('load',revealOnScroll);
+  </script>
+</body>
+</html>
