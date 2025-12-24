@@ -123,41 +123,60 @@
   /* ===========================
    TRUE SINGLE-CARD MOBILE VIEW
    =========================== */
+/* =====================================
+   PERFECT SINGLE-CARD MOBILE EXPERIENCE
+   ===================================== */
 @media (max-width: 768px) {
 
-  /* Remove section card look */
+  /* Sections become invisible wrappers */
   section {
-    background: none;
+    background: transparent;
     box-shadow: none;
-    padding: 1rem 0;
-    margin-bottom: 2.5rem;
+    padding: 0;
+    margin-bottom: 2.8rem;
   }
 
-  /* One card per row */
+  section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Force ONE card column */
   .card-grid {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
+    display: block;
   }
 
-  /* Make cards feel like main container */
+  /* THE single card */
   .card {
-    width: 100%;
+    width: calc(100% - 2rem);
     max-width: 420px;
     margin: 0 auto;
-    padding: 1.5rem 1.2rem;
-    border-radius: 1.4rem;
+    padding: 1.6rem 1.3rem;
+    border-radius: 1.6rem;
+
+    /* Reset animations */
     opacity: 1;
     transform: none;
+
+    /* Mobile card feel */
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    border: 1px solid #e0ddff;
+    background: #ffffff;
   }
 
-  /* Disable hover effects on touch */
+  /* Remove hover behavior (mobile-safe) */
   .card:hover {
     transform: none;
-    box-shadow: none;
-    border: none;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    border: 1px solid #e0ddff;
   }
 
-  /* Header adjustments */
+  /* Icons balanced */
+  .card-icon {
+    font-size: 2rem;
+  }
+
+  /* Header fix */
   header {
     height: auto;
     min-height: 100vh;
@@ -165,22 +184,17 @@
   }
 
   header h1 {
-    font-size: 2.1rem;
+    font-size: 2rem;
   }
 
   header p {
     font-size: 1rem;
   }
 
-  /* Navigation spacing */
+  /* Nav touch spacing */
   nav a {
-    font-size: 0.9rem;
     margin: 6px;
-  }
-
-  /* Icons slightly smaller */
-  .card-icon {
-    font-size: 2rem;
+    font-size: 0.9rem;
   }
 
   footer {
@@ -188,17 +202,12 @@
   }
 }
 
-/* Extra small phones */
+/* Ultra small phones */
 @media (max-width: 420px) {
   .card {
-    max-width: 100%;
-  }
-
-  header h1 {
-    font-size: 1.9rem;
+    width: calc(100% - 1.4rem);
   }
 }
-
 
   </style>
 </head>
