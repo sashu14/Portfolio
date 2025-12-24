@@ -1,206 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sashvitha Reddy | Portfolio</title>
+  <meta charset="UTF-8" />
+  <title>Sashvitha Reddy — AI & Data Analyst | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-    body{background:#f8f9fa;color:#333;line-height:1.6;}
-    a{text-decoration:none;color:inherit;}
-    h1,h2,h3{font-weight:600;}
-
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:80px}
+    body{
+      font-family:'Montserrat',sans-serif;
+      background:linear-gradient(120deg,#e9f7ef,#ede7f6);
+      color:#30335a;
+      line-height:1.6;
+    }
     header{
-      background:linear-gradient(135deg,#4f46e5,#9333ea);
-      color:#fff;
+      height:100vh;
+      background:linear-gradient(rgba(0,0,50,.5),rgba(0,0,50,.5)),
+      url('https://images.unsplash.com/photo-1526378722484-bd91ca387e72') center/cover no-repeat;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
       text-align:center;
-      padding:5rem 2rem;
-      position:relative;
+      color:#fff;
+      padding:2rem;
     }
-    header h1{font-size:3rem;letter-spacing:1px;}
-    header p{margin:0.5rem 0;font-size:1.1rem;}
-    .btn{
-      display:inline-block;
-      margin-top:1.5rem;
-      padding:0.8rem 1.5rem;
-      border-radius:30px;
-      background:#fff;
-      color:#4f46e5;
-      font-weight:600;
-      transition:0.3s;
+    header h1{font-size:3rem;font-weight:600}
+    header p{font-size:1.2rem;margin-top:.5rem}
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:#1e2a78;
+      padding:1rem;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
     }
-    .btn:hover{background:#ddd;}
+    nav a{
+      color:#fff;
+      margin:0 14px;
+      text-decoration:none;
+      padding:.3rem .9rem;
+      border-radius:20px;
+      transition:.3s;
+    }
+    nav a:hover{background:#fff;color:#1e2a78}
 
-    nav{margin-top:1.5rem;}
-    nav a{margin:0 12px;font-weight:500;color:#fff;transition:0.3s;}
-    nav a:hover{color:#ffd700;}
+    main{max-width:1100px;margin:auto;padding:2.5rem 1rem}
 
-    section{padding:4rem 2rem;max-width:1100px;margin:auto;}
+    section{
+      margin-bottom:3rem;
+      padding:2rem 1rem;
+      border-radius:1.5rem;
+      background:linear-gradient(145deg,#fff,#f5f5ff);
+      box-shadow:inset 0 3px 10px rgba(0,0,0,.05);
+    }
     section h2{
       text-align:center;
-      font-size:2rem;
-      color:#4f46e5;
-      margin-bottom:2rem;
-      position:relative;
+      color:#6d55e4;
+      font-size:1.7rem;
+      margin-bottom:1.5rem;
     }
     section h2::after{
       content:"";
       display:block;
       width:60px;
       height:4px;
-      background:#9333ea;
-      margin:8px auto 0;
-      border-radius:5px;
+      background:#6d55e4;
+      margin:10px auto;
+      border-radius:10px;
     }
 
-    .skills{display:flex;flex-wrap:wrap;gap:15px;justify-content:center;}
-    .skill{
-      background:linear-gradient(135deg,#4f46e5,#9333ea);
-      color:#fff;
-      padding:0.7rem 1.2rem;
-      border-radius:25px;
-      font-size:0.9rem;
-      transition:transform 0.3s;
+    .card-grid{
+      display:grid;
+      gap:1.5rem;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     }
-    .skill:hover{transform:scale(1.1);}
-
     .card{
       background:#fff;
-      padding:1.5rem;
-      margin:1rem 0;
-      border-radius:12px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
-      transition:transform 0.3s,box-shadow 0.3s;
+      padding:1.4rem;
+      border-radius:1.2rem;
+      text-align:center;
+      opacity:0;
+      transform:translateY(40px);
+      transition:.35s;
     }
-    .card:hover{transform:translateY(-5px);box-shadow:0 6px 15px rgba(0,0,0,0.15);}
-    .card h3{color:#333;margin-bottom:0.5rem;}
-
-    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-    .projects .card a{color:#4f46e5;font-weight:600;}
-
-    .timeline{border-left:3px solid #4f46e5;padding-left:20px;}
-    .timeline li{margin:20px 0;list-style:none;position:relative;}
-    .timeline li::before{
-      content:"";
-      position:absolute;
-      left:-11px;top:5px;
-      width:15px;height:15px;
-      background:#9333ea;
-      border-radius:50%;
+    .card.show{
+      opacity:1;
+      transform:none;
     }
-
+    .card:hover{
+      transform:translateY(-12px) scale(1.05);
+      box-shadow:0 16px 32px rgba(109,85,228,.25);
+      border:2px solid #d1c4e9;
+    }
+    .card-icon{
+      font-size:2.4rem;
+      color:#6d55e4;
+      margin-bottom:.4rem;
+    }
+    .card-title{
+      font-weight:600;
+      margin-bottom:.4rem;
+      color:#4527a0;
+    }
     footer{
-      background:#4f46e5;
+      background:#1e2a78;
       color:#fff;
       text-align:center;
-      padding:2rem 1rem;
-      margin-top:2rem;
+      padding:1.5rem;
+      margin-top:3rem;
     }
-    footer a{color:#ffd700;margin:0 8px;font-weight:500;}
-
-    .reveal{opacity:0;transform:translateY(30px);transition:all 0.8s ease;}
-    .reveal.active{opacity:1;transform:translateY(0);}
+    @media(max-width:768px){
+      header h1{font-size:2.2rem}
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1 class="reveal">Sashvitha Reddy</h1>
-    <p class="reveal">AI Enthusiast | Data Analyst | Developer</p>
-    <p class="reveal">📍 Suchitra, Hyderabad | 📞 +91 93818 79223 | ✉️ <a href="mailto:sashvitha15220@gmail.com" style="color:white;">sashvitha15220@gmail.com</a></p>
-    <a href="#projects" class="btn reveal">View My Work</a>
-    <nav>
-      <a href="#objective">Objective</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-    </nav>
-  </header>
+<header>
+  <h1>Sashvitha Reddy</h1>
+  <p>AI Enthusiast | Data Analyst | Developer</p>
+</header>
 
-  <section id="objective" class="reveal">
-    <h2>Objective</h2>
-    <p style="text-align:center;max-width:800px;margin:auto;">
-      B.Tech student at Woxsen University, passionate about AI, data analysis, and software development. 
-      Eager to apply technical and analytical skills in dynamic environments.
-    </p>
-  </section>
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <section id="skills" class="reveal">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span class="skill">Python</span>
-      <span class="skill">Java</span>
-      <span class="skill">SQL</span>
-      <span class="skill">Botpress</span>
-      <span class="skill">HTML</span>
-      <span class="skill">CSS</span>
-      <span class="skill">JavaScript</span>
-      <span class="skill">Market Studies</span>
-      <span class="skill">Linux</span>
-      <span class="skill">Database Management</span>
-      <span class="skill">Communication</span>
-    </div>
-  </section>
+<main>
 
-  <section id="projects" class="reveal">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="card">
-        <h3>AI Chatbot (AURA) for Stress Management</h3>
-        <p>Developed an AI-driven chatbot using Python and Botpress, focused on NLP techniques. 
-           Managed full-stack development, data handling, and system integration for real-time support.</p>
-        <a href="https://sashu14.github.io/AURA/" target="_blank">🔗 View AURA</a>
-      </div>
-      <div class="card">
-        <h3>Aviation Competitiveness Research</h3>
-        <p>Collaborated with corporate clients (Maruti, Alliance) on consulting studies focusing on leadership strategy, 
-           data-driven decision making, and stakeholder requirement analysis.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" class="reveal">
-    <h2>Experience</h2>
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card-grid">
     <div class="card">
-      <h3>Project Intern – BHEL</h3>
-      <p>Contributed to the RAG (Retrieve-Answer-Generate) project. Integrated NLP models, 
-         evaluated backend data retrieval/response mechanisms, and collaborated with technical teams.</p>
+      <div class="card-icon"><i class="fas fa-user"></i></div>
+      <div class="card-title">Career Objective</div>
+      <p>
+        B.Tech student at Woxsen University with strong interest in AI, data analytics,
+        and intelligent systems. Passionate about solving real-world problems using technology.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card-grid">
+    <div class="card"><div class="card-icon"><i class="fab fa-python"></i></div><div class="card-title">Python</div></div>
+    <div class="card"><div class="card-icon"><i class="fab fa-java"></i></div><div class="card-title">Java</div></div>
+    <div class="card"><div class="card-icon"><i class="fas fa-database"></i></div><div class="card-title">SQL</div></div>
+    <div class="card"><div class="card-icon"><i class="fab fa-html5"></i></div><div class="card-title">HTML</div></div>
+    <div class="card"><div class="card-icon"><i class="fab fa-css3-alt"></i></div><div class="card-title">CSS</div></div>
+    <div class="card"><div class="card-icon"><i class="fab fa-js"></i></div><div class="card-title">JavaScript</div></div>
+    <div class="card"><div class="card-icon"><i class="fas fa-robot"></i></div><div class="card-title">Botpress</div></div>
+    <div class="card"><div class="card-icon"><i class="fab fa-linux"></i></div><div class="card-title">Linux</div></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="card-grid">
+    <a href="https://sashu14.github.io/AURA/" target="_blank" class="card">
+      <div class="card-icon"><i class="fas fa-comments"></i></div>
+      <div class="card-title">AI Chatbot – AURA</div>
+      <p>Stress management chatbot using NLP, Python & Botpress.</p>
+    </a>
+    <div class="card">
+      <div class="card-icon"><i class="fas fa-plane"></i></div>
+      <div class="card-title">Aviation Competitiveness Study</div>
+      <p>Corporate consulting research with data-driven analysis.</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+      <div class="card-title">Project Intern – BHEL</div>
+      <p>Worked on RAG-based AI systems, backend data retrieval & NLP models.</p>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+      <div class="card-title">B.Tech (2023–2027)</div>
+      <p>Woxsen University</p>
     </div>
     <div class="card">
-      <h3>Executive Education – Woxsen University</h3>
-      <p>Worked with corporate leaders on consulting projects in strategy and development.</p>
+      <div class="card-icon"><i class="fas fa-school"></i></div>
+      <div class="card-title">Intermediate</div>
+      <p>Excellencia Junior College – 97%</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="education" class="reveal">
-    <h2>Education</h2>
-    <ul class="timeline">
-      <li><b>B.Tech (2023–27):</b> Woxsen University (Pursuing 3rd year)</li>
-      <li><b>Intermediate:</b> Excellencia Junior College – 97%</li>
-      <li><b>High School:</b> Bhavan Sri Ramakrishna Vidyalaya – 9.3 CGPA</li>
-    </ul>
-  </section>
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card-grid">
+    <div class="card"><div class="card-icon"><i class="fas fa-envelope"></i></div><p>sashvitha15220@gmail.com</p></div>
+    <div class="card"><div class="card-icon"><i class="fas fa-phone"></i></div><p>+91 93818 79223</p></div>
+    <div class="card"><div class="card-icon"><i class="fas fa-map-marker-alt"></i></div><p>Hyderabad</p></div>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2025 Sashvitha Reddy</p>
-    <p>
-      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a> | 
-      <a href="https://github.com" target="_blank">GitHub</a>
-    </p>
-  </footer>
+</main>
 
-  <script>
-    function revealOnScroll(){
-      const reveals=document.querySelectorAll('.reveal');
-      for(let r of reveals){
-        const windowHeight=window.innerHeight;
-        const revealTop=r.getBoundingClientRect().top;
-        if(revealTop < windowHeight-100){r.classList.add('active');}
-      }
-    }
-    window.addEventListener('scroll',revealOnScroll);
-    window.addEventListener('load',revealOnScroll);
-  </script>
+<footer>
+  © 2025 Sashvitha Reddy | All Rights Reserved
+</footer>
+
+<script>
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('show')}
+    })
+  },{threshold:.2});
+  document.querySelectorAll('.card').forEach(c=>observer.observe(c));
+</script>
+
 </body>
 </html>
