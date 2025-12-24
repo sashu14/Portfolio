@@ -120,12 +120,44 @@
     @media(max-width:768px){
       header h1{font-size:2.2rem}
     }
-    /* =========================
-   MOBILE RESPONSIVE FIXES
-   ========================= */
+  /* ===========================
+   TRUE SINGLE-CARD MOBILE VIEW
+   =========================== */
 @media (max-width: 768px) {
 
-  /* Header Fix */
+  /* Remove section card look */
+  section {
+    background: none;
+    box-shadow: none;
+    padding: 1rem 0;
+    margin-bottom: 2.5rem;
+  }
+
+  /* One card per row */
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  /* Make cards feel like main container */
+  .card {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 1.5rem 1.2rem;
+    border-radius: 1.4rem;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Disable hover effects on touch */
+  .card:hover {
+    transform: none;
+    box-shadow: none;
+    border: none;
+  }
+
+  /* Header adjustments */
   header {
     height: auto;
     min-height: 100vh;
@@ -140,62 +172,33 @@
     font-size: 1rem;
   }
 
-  /* Navigation Fix */
-  nav {
-    padding: 0.8rem;
-  }
-
+  /* Navigation spacing */
   nav a {
-    margin: 6px;
     font-size: 0.9rem;
+    margin: 6px;
   }
 
-  /* Section spacing */
-  section {
-    padding: 1.5rem 1rem;
-  }
-
-  section h2 {
-    font-size: 1.4rem;
-  }
-
-  /* Cards layout */
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    padding: 1.3rem 1rem;
-  }
-
-  /* Disable hover scale on mobile */
-  .card:hover {
-    transform: none;
-    box-shadow: none;
-  }
-
-  /* Icons size */
+  /* Icons slightly smaller */
   .card-icon {
     font-size: 2rem;
   }
 
-  /* Footer */
   footer {
     font-size: 0.85rem;
-    padding: 1.2rem;
   }
 }
 
-/* Extra small devices */
+/* Extra small phones */
 @media (max-width: 420px) {
+  .card {
+    max-width: 100%;
+  }
+
   header h1 {
     font-size: 1.9rem;
   }
-
-  header p {
-    font-size: 0.95rem;
-  }
 }
+
 
   </style>
 </head>
